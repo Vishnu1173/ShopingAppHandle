@@ -1,0 +1,86 @@
+﻿<Window x:Class="ShoppingApp.Win"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ShoppingApp"
+        mc:Ignorable="d"
+        Title="Win" Background="Blue"  Height="850" Width="1000">
+    <ScrollViewer x:Name="scroll" IsEnabled="True">
+        <Grid>
+
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition   Height="Auto" ></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition  Height="*"></RowDefinition>
+                <RowDefinition  Height="*"></RowDefinition>
+                <RowDefinition  Height="*"></RowDefinition>
+                <RowDefinition  Height="*"></RowDefinition>
+                <RowDefinition  Height="*"></RowDefinition>
+                <RowDefinition  Height="*"></RowDefinition>
+                <RowDefinition  Height="*"></RowDefinition>
+
+            </Grid.RowDefinitions>
+
+            <Label Content="Flipkart"   Foreground="white"  Grid.Row="0" FontStyle="Italic" FontSize="20" FontWeight="UltraBold" VerticalAlignment="Top"  Grid.Column="1" Height="35" Margin="0,-6,0,0"></Label>
+            <Label Content="Explore Plus"   Foreground="Orange"  FontStyle="Italic" FontSize="15" FontWeight="Bold"  Grid.Row="0" Grid.Column="1" VerticalAlignment="Top" Height="30" Width="100" Margin="15,29,18,0"></Label>
+            <TextBox x:Name="txtsearch" Background="White"  Grid.Row="0"  Margin="41,19,8,24" Grid.Column="2" Grid.ColumnSpan="2" />
+            <Label Content="Login"   Background="White"   Foreground="Blue" FontSize="20"   x:Name="Login" Grid.Row="0"  Grid.Column="4" Margin="73,17,15,26" />
+            <Label Content="More"  Foreground="White"   FontSize="20" x:Name="More" Grid.Row="0"  Margin="12,19,60,19" Grid.Column="5" />
+            <ComboBox  Name="Electronics"    Background="White"   Grid.Column="0" Grid.Row="1" SelectedIndex="0" >
+                <ComboBoxItem Content="Electronics" Background="White"></ComboBoxItem>
+            </ComboBox>
+
+            <ComboBox Name="TVAppliances" Grid.Column= "1" Grid.Row="1" Background="White" SelectedIndex="0">
+                <ComboBoxItem Content="TVAppliances"></ComboBoxItem>
+            </ComboBox>
+            <ComboBox Name="HomeFurnitures" Grid.Column="2" Grid.Row="1"  Background="White" SelectedIndex="0">
+                <ComboBoxItem Content="HomeFurnitures"></ComboBoxItem>
+            </ComboBox>
+            <ComboBox Name="SportsandBooks" Grid.Column="3" Grid.Row="1"  Background="White" SelectedIndex="0">
+                <ComboBoxItem Content="SportsandBooks"></ComboBoxItem>
+            </ComboBox>
+            <ComboBox Name="Fights" Grid.Column="4" Grid.Row="1"  Background="White" SelectedIndex="0">
+                <ComboBoxItem Content="Fights"></ComboBoxItem>
+            </ComboBox>
+            <ComboBox Name="OfferZone" Grid.Column="5" Grid.Row="1"  Background="White" SelectedIndex="0">
+                <ComboBoxItem Content="OfferZone"></ComboBoxItem>
+            </ComboBox>
+            <Border  x:Name="mainframe" Background="White"  Grid.Column="0" Grid.Row="2" Margin="5,7,4,15" Grid.RowSpan="7"/>
+            <Label Content="Filters"  Grid.Column="0" Grid.Row="2" Margin="11,12,9,0"  VerticalAlignment="Top"/>
+            <Frame x:Name="framemain" Background="White" Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="5" Margin="16,7,8,15" Grid.RowSpan="7"></Frame>
+            <TextBox x:Name="searchbox"  Grid.Column="0" Grid.Row="3" VerticalAlignment="Top" TextChanged="searchbox_TextChanged" Grid.ColumnSpan="2" Height="29" Margin="0,0,164,0"></TextBox>
+            <!--<ComboBox  x:Name="price" Grid.Column="0" Grid.Row="3"  VerticalAlignment="Top" Margin="5,33,4,0" Height="70">
+                <ComboBoxItem Content="100000"></ComboBoxItem>
+                <ComboBoxItem Content="80000"></ComboBoxItem>
+                <ComboBoxItem Content="70000"></ComboBoxItem>
+                <ComboBoxItem Content="50000"></ComboBoxItem>
+                <ComboBoxItem Content="40000"></ComboBoxItem>
+            </ComboBox>-->
+            <ListView x:Name="listview"  Width="150" Height="250"  Grid.Column="0" Grid.Row="3" Margin="5,40,4,8"  >
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="price" Width="150"   DisplayMemberBinding="{Binding Price}"></GridViewColumn>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+            <ListView x:Name="listdata" Grid.Column="0" Width="150"  Height="250" Grid.Row="4" Margin="5,1,4,196"   >
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="brand" Width="150" DisplayMemberBinding="{Binding brand}"></GridViewColumn>
+
+                    </GridView>
+                </ListView.View>
+            </ListView>
+        </Grid>
+    </ScrollViewer>
+</Window>
